@@ -57,4 +57,4 @@ The `PARALLEL_CHEAPEST_INSERTION` strategy emerged as the most effective initial
 | GUIDED_LOCAL_SEARCH   |                  1188.487|
 | **SIMULATED_ANNEALING**|                 1187.005|
 
-Further refinement using the `SIMULATED_ANNEALING` local search metaheuristic resulted in the best overall solution, achieving an approximate total cost of ~1187. This combination of strategies provided an optimal balance between solution quality and computational efficiency for the specific constraints and characteristics of the problem addressed in this project.
+Further refinement using the `SIMULATED_ANNEALING` local search metaheuristic resulted in the best overall solution, achieving an approximate total cost of ~1187.  
