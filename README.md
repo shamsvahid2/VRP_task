@@ -1,6 +1,6 @@
 # Vehicle Routing Problem Solution
 
-This project offers a comprehensive solution to a variant of the Vehicle Routing Problem (VRP) incorporating specific operational constraints. The solution is tailored to handle missions from a hub to various locations and vice versa, with vehicles of differing capabilities and costs.
+This project offers a comprehensive solution to a specific kind of the Vehicle Routing Problem (VRP).
 
 ## Implementation
 
@@ -8,7 +8,7 @@ The implementation follows a structured approach to solving the VRP:
 
 1. **Distance Calculation**: Utilizes the Haversine formula to compute the distance matrix among all nodes, providing a realistic measure of distances on the Earth's surface.
 2. **OR-Tools Solver**: Leverages Google's OR-Tools to model and solve the VRP, incorporating:
-   - A modified `cost_callback` to include both distance and delivery costs.
+   - A modified `cost_callback` to include both distance and delivery costs (based on vehicle type).
    - Capacity constraints for vehicles, ensuring no vehicle exceeds its maximum capacity.
    - Demands for each node, represented as positive (for hub to location missions) and negative (for location to hub missions) values.
 
@@ -31,11 +31,9 @@ The code is fully documented with comprehensive docstrings and comments to ensur
 - The parameters it takes.
 - The value it returns.
 
-This documentation approach provides insights into the functionality of each component and the rationale behind specific implementation choices, facilitating easier maintenance and future enhancements.
-
 ## Results
 
-The effectiveness of various solution strategies was evaluated to identify the most efficient approach for solving the Vehicle Routing Problem with the given constraints. The testing process involved experimenting with different `FirstSolutionStrategy` and `LocalSearchMetaheuristic` options provided by OR-Tools. The results are summarized in the tables below:
+The effectiveness of various solution strategies was evaluated to identify the most efficient approach for solving the problem. The testing process involved experimenting with different `FirstSolutionStrategy` and `LocalSearchMetaheuristic` options provided by OR-Tools. The results are summarized in the tables below:
 
 ### First Solution Strategy Results
 
@@ -57,4 +55,4 @@ The `PARALLEL_CHEAPEST_INSERTION` strategy emerged as the most effective initial
 | GUIDED_LOCAL_SEARCH   |                  1188.487|
 | **SIMULATED_ANNEALING**|                 1187.005|
 
-Further refinement using the `SIMULATED_ANNEALING` local search metaheuristic resulted in the best overall solution, achieving an approximate total cost of ~1187.  
+Further refinement using the `SIMULATED_ANNEALING` local search metaheuristic resulted in the best overall solution, achieving an approximate total cost of ~1187.  **So the final answer of my code is ~1187**
